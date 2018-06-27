@@ -1,0 +1,13 @@
+{
+    "name": "cimons/larafcm",
+    "description": "Laravel FCM Package",
+    "type": "composer-plugin",
+    "authors": [
+        {
+            "name": "Simon Shrestha",
+            "email": "cimon77@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
