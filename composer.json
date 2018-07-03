@@ -1,13 +1,19 @@
 {
-    "name": "cimons/larafcm",
-    "description": "Laravel FCM Package",
-    "type": "composer-plugin",
-    "authors": [
-        {
-            "name": "Simon Shrestha",
-            "email": "cimon77@gmail.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {}
+  "name": "cimons/larafcm",
+  "description": "Laravel FCM Package",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Simon Shrestha",
+      "email": "cimon77@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Cimons\\LaraFcm\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "require": {}
 }
