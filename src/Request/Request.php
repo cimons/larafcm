@@ -3,18 +3,21 @@
 namespace Cimons\LaraFcm\Request;
 
 use Cimons\LaraFcm\Message\Notification;
+use Cimons\LaraFcm\Message\PayloadData;
 
 class Request extends BaseRequest
 {
     protected $to;
     protected $notification;
+    protected $data;
 
-    public function __construct($to, Notification $notification = null)
+    public function __construct($to, Notification $notification = null, PayloadData $data = null)
     {
         parent::__construct();
 
         $this->to           = $to;
         $this->notification = $notification;
+        $this->data = $data;
     }
 
 
@@ -50,6 +53,7 @@ class Request extends BaseRequest
             'to' => $this->getTo(),
             'registration_ids' => $this->getRegistrationIds(),
             'notification' => $this->getNotification(),
+            'data' => $this->getData(),
         ];
 
         // remove null entries
@@ -64,6 +68,16 @@ class Request extends BaseRequest
     protected function getNotification()
     {
         return $this->notification ? $this->notification->toArray() : null;
+    }
+
+    /**
+     * get data transformed.
+     *
+     * @return array|null
+     */
+    protected function getData()
+    {
+        return $this->data ? $this->data->toArray() : null;
     }
 
 }
