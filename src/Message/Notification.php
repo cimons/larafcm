@@ -10,6 +10,7 @@ class Notification implements Arrayable
     protected $title;
     protected $body;
     protected $sound;
+    protected $clickAction;
 
     public function __construct(NotificationBuilder $builder)
     {
@@ -17,6 +18,7 @@ class Notification implements Arrayable
         $this->title = $builder->getTitle();
         $this->body  = $builder->getBody();
         $this->sound = $builder->getSound();
+        $this->clickAction = $builder->getClickAction();
     }
 
     /**
@@ -29,7 +31,8 @@ class Notification implements Arrayable
         $notification = [
             'title' => $this->title,
             'body'  => $this->body,
-            'sound' => $this->sound
+            'sound' => $this->sound,
+            'click_action' => $this->clickAction,
         ];
 
         // remove null values

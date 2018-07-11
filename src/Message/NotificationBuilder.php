@@ -28,6 +28,13 @@ class NotificationBuilder
     protected $sound;
 
     /**
+     * @internal
+     *
+     * @var null|string
+     */
+    protected $clickAction;
+
+    /**
      * Title must be present on android notification and ios (watch) notification.
      *
      * @param string $title
@@ -47,6 +54,20 @@ class NotificationBuilder
     public function setSound($sound)
     {
         $this->sound = $sound;
+
+        return $this;
+    }
+
+    /**
+     * Indicates the action associated with a user click on the notification.
+     *
+     * @param string $action
+     *
+     * @return NotificationBuilder current instance of the builder
+     */
+    public function setClickAction($action)
+    {
+        $this->clickAction = $action;
 
         return $this;
     }
@@ -79,6 +100,16 @@ class NotificationBuilder
     public function getSound()
     {
         return $this->sound;
+    }
+
+    /**
+     * Get ClickAction.
+     *
+     * @return null|string
+     */
+    public function getClickAction()
+    {
+        return $this->clickAction;
     }
 
     /**
